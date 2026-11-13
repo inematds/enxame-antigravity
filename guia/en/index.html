@@ -133,6 +133,9 @@
   .video{aspect-ratio:16/9;border:1px dashed var(--line);border-radius:16px;background:var(--card);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;text-align:center;padding:20px}
   .video strong{font-family:Sora;font-size:1.2rem}
   .video span{color:var(--mut);font-size:.95rem;max-width:52ch}
+  .videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+  .vid figcaption{font-family:Sora;font-weight:600;margin:0 0 8px}
+  .vid iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:16px;background:#000;display:block}
   .techhead{background:var(--bg2);border-top:3px solid var(--amb);padding:58px 0 8px}
   .techhead h2{font-family:Sora;margin:.3em 0 0;font-size:clamp(1.5rem,3.4vw,2.1rem)}
   .techhead p{color:var(--mut);max-width:66ch}
@@ -194,7 +197,10 @@
   <h2>Understand it in a few minutes</h2>
   <p class="sub">Three videos will appear here: the basics (what it is and when to use it), the technical side (coordinator, board, and verifier), and the sheet (how to write the specification).</p>
   <!-- VIDEO: entra o explicavideo do projeto quando publicado -->
-  <div class="video"><strong>Video coming soon</strong><span>In the meantime, the rest of the page explains everything with text and images.</span></div>
+  <div class="videos">
+    <!-- VIDEOS: cada vídeo publicado entra como um <figure class="vid"> aqui dentro -->
+    <figure class="vid"><figcaption>Specification: how to write the Swarm Sheet</figcaption><iframe src="https://www.youtube-nocookie.com/embed/Ur_vqXiK7iI" title="Video: Swarm Sheet" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></figure>
+  </div>
 </div></section>
 
 <section id="entender"><div class="wrap">
