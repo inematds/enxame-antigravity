@@ -1,0 +1,90 @@
+# Saídas reais do checar.py nos exemplos (geradas em 13/11/2026 com: python3 checar.py <ficha>)
+# São saídas do checar.py, que só lê o Markdown. Não são saídas do /swarm: o /swarm não foi rodado.
+
+$ python3 checar.py exemplos/calculadora-roi/ficha.md
+Ficha do Enxame: exemplos/calculadora-roi/ficha.md
+✔ 1. Tarefa escrita — tarefa: Criar uma página HTML única de calculadora de ROI: a pessoa digita tráfego mensal, taxa de…
+✔ 2. Como verificar tem um comando — comando: node --test tests/calculo.test.js
+✔ 3. Pelo menos 2 peças — 3 peça(s): @layout, @entradas, @calculo
+✔ 4. Toda peça tem dono — todas têm dono
+✔ 5. Donos não se sobrepõem — nenhum arquivo com dois donos
+✔ 6. Toda peça diz o que não mexe e quando está pronta — todas completas
+✔ 7. Verificador definido — 1 verificador(es) para 3 peça(s); roda: node --test tests/calculo.test.js
+✔ 8. Limites de cota e de parada, sem laço sem supervisão — cota e parada definidas; nenhum laço sem supervisão
+Nota: 8/8 — pronta para o /swarm
+(código de saída: 0)
+
+$ python3 checar.py exemplos/landing-page/ficha.md
+Ficha do Enxame: exemplos/landing-page/ficha.md
+✔ 1. Tarefa escrita — tarefa: Montar a landing page de um curso grátis em `site/`, com cabeçalho, benefícios, formulário…
+✔ 2. Como verificar tem um comando — comando: python3 tests/checar_site.py site/
+✔ 3. Pelo menos 2 peças — 6 peça(s): @cabecalho, @beneficios, @formulario, @depoimentos, @faq, @montagem
+✔ 4. Toda peça tem dono — todas têm dono
+✔ 5. Donos não se sobrepõem — nenhum arquivo com dois donos
+✔ 6. Toda peça diz o que não mexe e quando está pronta — todas completas
+✔ 7. Verificador definido — 2 verificador(es) para 6 peça(s); roda: python3 tests/checar_site.py site/
+✔ 8. Limites de cota e de parada, sem laço sem supervisão — cota e parada definidas; nenhum laço sem supervisão
+Nota: 8/8 — pronta para o /swarm
+(código de saída: 0)
+
+$ python3 checar.py exemplos/investigacao-lenta/ficha.md
+Ficha do Enxame: exemplos/investigacao-lenta/ficha.md
+✔ 1. Tarefa escrita — tarefa: Descobrir por que o nosso programa de linha de comando leva 4 segundos para abrir e entreg…
+✔ 2. Como verificar tem um comando — comando: time python3 -X importtime app/main.py --help
+✔ 3. Pelo menos 2 peças — 3 peça(s): @importacoes, @configuracao, @plugins
+✔ 4. Toda peça tem dono — todas têm dono
+✔ 5. Donos não se sobrepõem — nenhum arquivo com dois donos
+✔ 6. Toda peça diz o que não mexe e quando está pronta — todas completas
+✔ 7. Verificador definido — 1 verificador(es) para 3 peça(s); roda: time python3 -X importtime app/main.py --help
+✔ 8. Limites de cota e de parada, sem laço sem supervisão — cota e parada definidas; nenhum laço sem supervisão
+Nota: 8/8 — pronta para o /swarm
+(código de saída: 0)
+
+$ python3 checar.py exemplos/testes-por-pacote/ficha.md
+Ficha do Enxame: exemplos/testes-por-pacote/ficha.md
+✔ 1. Tarefa escrita — tarefa: Rodar o pytest no repositório, separar os testes que falham por pacote e consertar cada pa…
+✔ 2. Como verificar tem um comando — comando: pytest -q
+✔ 3. Pelo menos 2 peças — 3 peça(s): @conserta-pagamentos, @conserta-clientes, @conserta-relatorios
+✔ 4. Toda peça tem dono — todas têm dono
+✔ 5. Donos não se sobrepõem — nenhum arquivo com dois donos
+✔ 6. Toda peça diz o que não mexe e quando está pronta — todas completas
+✔ 7. Verificador definido — 1 verificador(es) para 3 peça(s); roda: pytest -q
+✔ 8. Limites de cota e de parada, sem laço sem supervisão — cota e parada definidas; nenhum laço sem supervisão
+Nota: 8/8 — pronta para o /swarm
+(código de saída: 0)
+
+$ python3 checar.py exemplos/ruim.md
+Ficha do Enxame: exemplos/ruim.md
+✔ 1. Tarefa escrita — tarefa: Melhorar o site todo.
+✘ 2. Como verificar tem um comando — nenhum comando entre crases em '## Como verificar'
+   → como corrigir: Em '## Como verificar', ponha o comando entre crases, ex.: `npm test` ou `python3 -m unittest`.
+✔ 3. Pelo menos 2 peças — 3 peça(s): @design, @textos, @extra
+✘ 4. Toda peça tem dono — sem dono: @extra
+   → como corrigir: Em cada peça, escreva '- dono:' com os arquivos/pastas entre crases (`src/a.ts`) ou a pergunta que ela investiga.
+✘ 5. Donos não se sobrepõem — colisão: @design `site/` × @textos `site/index.html`
+   → como corrigir: Dê cada arquivo a uma peça só. Se duas precisam do mesmo arquivo, quebre o arquivo em partes, junte as duas peças numa só, ou peça cópias de trabalho (working copy) para cada worker.
+✘ 6. Toda peça diz o que não mexe e quando está pronta — @design sem 'não mexe'; @textos sem 'pronto quando'; @extra sem 'pronto quando'
+   → como corrigir: Em cada peça, escreva '- não mexe:' (o que é dos outros) e '- pronto quando:' (o teste ou o sinal de fim).
+✘ 7. Verificador definido — sem seção '## Verificador'
+   → como corrigir: Acrescente '## Verificador' com '- roda:' (revisa os diffs e roda o comando de verificação), '- modelo: diferente dos workers' e, acima de 4 peças, '- quantos: 2'.
+✘ 8. Limites de cota e de parada, sem laço sem supervisão — falta limite de cota; falta quando parar; pede laço sem supervisão: - deixar o /swarm rodando a noite toda sem supervisão até ficar perfeito
+   → como corrigir: Em '## Limites', escreva quanto de cota aceita gastar e quando parar. Tire qualquer pedido de rodar em laço, à noite ou sem você olhando: laço de fundo sem supervisão em alto volume pode acionar o antiabuso.
+   ! aviso: diga quando remover os workers (remover é permanente; ele entrega as mudanças antes)
+Nota: 2/8 — ainda não: corrija os ✘ antes do /swarm
+(código de saída: 1)
+
+$ python3 checar.py exemplos/ruim.md --prompt
+Sem texto para o /swarm: a ficha tirou 2/8 e precisa de 7 ou mais.
+✘ 2. Como verificar tem um comando — nenhum comando entre crases em '## Como verificar'
+   → como corrigir: Em '## Como verificar', ponha o comando entre crases, ex.: `npm test` ou `python3 -m unittest`.
+✘ 4. Toda peça tem dono — sem dono: @extra
+   → como corrigir: Em cada peça, escreva '- dono:' com os arquivos/pastas entre crases (`src/a.ts`) ou a pergunta que ela investiga.
+✘ 5. Donos não se sobrepõem — colisão: @design `site/` × @textos `site/index.html`
+   → como corrigir: Dê cada arquivo a uma peça só. Se duas precisam do mesmo arquivo, quebre o arquivo em partes, junte as duas peças numa só, ou peça cópias de trabalho (working copy) para cada worker.
+✘ 6. Toda peça diz o que não mexe e quando está pronta — @design sem 'não mexe'; @textos sem 'pronto quando'; @extra sem 'pronto quando'
+   → como corrigir: Em cada peça, escreva '- não mexe:' (o que é dos outros) e '- pronto quando:' (o teste ou o sinal de fim).
+✘ 7. Verificador definido — sem seção '## Verificador'
+   → como corrigir: Acrescente '## Verificador' com '- roda:' (revisa os diffs e roda o comando de verificação), '- modelo: diferente dos workers' e, acima de 4 peças, '- quantos: 2'.
+✘ 8. Limites de cota e de parada, sem laço sem supervisão — falta limite de cota; falta quando parar; pede laço sem supervisão: - deixar o /swarm rodando a noite toda sem supervisão até ficar perfeito
+   → como corrigir: Em '## Limites', escreva quanto de cota aceita gastar e quando parar. Tire qualquer pedido de rodar em laço, à noite ou sem você olhando: laço de fundo sem supervisão em alto volume pode acionar o antiabuso.
+(código de saída: 1)

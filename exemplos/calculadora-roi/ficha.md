@@ -1,0 +1,33 @@
+# Tarefa
+Criar uma página HTML única de calculadora de ROI: a pessoa digita tráfego mensal, taxa de conversão (%), ticket médio e aumento estimado (%), e a página mostra o ganho estimado por mês, com ganho = tráfego × (aumento/100) × (conversão/100) × ticket.
+
+## Como verificar
+- comando: `node --test tests/calculo.test.js`
+
+## Peças
+
+### @layout
+- dono: `index.html`, `estilo.css`
+- não mexe: `entradas.js`, `calculo.js`, `tests/`
+- pronto quando: `index.html` carrega `estilo.css`, `entradas.js` e `calculo.js`, e a página fica legível em 360 px de largura
+
+### @entradas
+- dono: `entradas.js`
+- não mexe: `index.html`, `estilo.css`, `calculo.js`
+- pronto quando: os 4 campos (tráfego mensal, taxa de conversão em %, ticket médio, aumento estimado em %) aceitam só números maiores ou iguais a zero e avisam o erro ao lado do campo
+
+### @calculo
+- dono: `calculo.js`, `tests/calculo.test.js`
+- não mexe: `index.html`, `estilo.css`, `entradas.js`
+- pronto quando: ganho = tráfego × (aumento/100) × (conversão/100) × ticket, com teste para valores comuns, zero e número decimal (ex.: 10000 visitas, 2%, R$ 150 e 20% dão R$ 6000), e `node --test tests/calculo.test.js` passa
+
+## Verificador
+- quantos: 1
+- modelo: diferente dos workers
+- roda: lê os 3 diffs, confere que ninguém editou arquivo de outra peça e roda `node --test tests/calculo.test.js`
+
+## Limites
+- cota: só 3 workers e 1 verificador; se a cota acabar, parar e me avisar
+- parar: quando o teste passar e o verificador aprovar, ou depois de 2 rodadas de correção
+- limpar workers: remover os workers depois que entregarem as mudanças
+- sem laço: nada de rodar /swarm em laço ou sem eu olhar o quadro
