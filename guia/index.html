@@ -267,12 +267,12 @@
 <section id="cuidados"><div class="wrap">
   <span class="chip">Cuidados</span>
   <h2>O enxame gasta cota rápido. Comece pequeno.</h2>
-  <p class="sub">Cada worker é um agente próprio. Pela nossa conta, três workers, um verificador e o monitor já são cinco agentes, não um.</p>
+  <p class="sub">Cada worker é um agente próprio. Pela nossa conta, três workers, um verificador e o monitor já são cinco agentes além do coordenador, não um.</p>
   <div class="grid g2">
     <div class="card"><h3>💳 Cota</h3><p>A documentação avisa: um enxame gasta cota muito mais rápido que uma conversa. Está em prévia e só nos planos Google AI Pro e Ultra.</p></div>
     <div class="card"><h3>⏸️ Sem cota, pausa</h3><p>O membro que fica sem cota pausa e não fica tentando. Só volta com post novo no quadro, troca de modelo ou mensagem sua. Não reinicia sozinho quando a cota renova.</p></div>
     <div class="card"><h3>🗑️ Remover é permanente</h3><p>Worker removido não volta, e a cópia de trabalho dele é apagada. Peça ao coordenador para ele entregar as mudanças antes.</p></div>
-    <div class="card"><h3>🚫 Nada de laço sem supervisão</h3><p><strong>Relato</strong> de um usuário: a conta foi bloqueada em minutos quando outro agente disparou dezenas de sessões sem supervisão, em segundos; voltou depois de um recurso automático. A resposta citada no fórum do Google: uso automatizado é permitido e desconta da cota, mas laços de fundo sem supervisão, em alto volume, podem acionar a proteção antiabuso.</p></div>
+    <div class="card"><h3>🚫 Nada de laço sem supervisão</h3><p><strong>Relato</strong> de um usuário: a conta foi bloqueada em minutos quando outro agente disparou dezenas de sessões sem supervisão, em segundos; voltou depois de um recurso automático. Segundo o mesmo relato, uma resposta no fórum do Google disse que o uso automatizado é permitido e desconta da cota, mas laços de fundo sem supervisão, em alto volume, podem acionar a proteção antiabuso.</p></div>
   </div>
   <div class="note" style="margin-top:22px"><strong>Recomendação:</strong> comece com 2 ou 3 peças e 1 verificador, acompanhe o quadro, escreva na ficha quanto de cota aceita gastar e quando parar, e não rode enxames em laço à noite. Detalhes no <a href="https://github.com/inematds/enxame-antigravity/blob/main/CUIDADOS.md" target="_blank" rel="noopener">CUIDADOS.md</a>.</div>
 </div></section>
@@ -292,7 +292,7 @@
   <div class="grid g3">
     <div class="card"><h3>📝 modelos/FICHA.md</h3><p>O modelo da ficha em Markdown: Tarefa, Como verificar, Peças (<code>### @nome</code> com dono, não mexe, pronto quando), Verificador, Limites e, se quiser, Modelo dos workers.</p></div>
     <div class="card"><h3>✅ checar.py</h3><p>Confere 8 itens, dá nota 0–8 com o motivo e como corrigir. <code>--prompt</code> monta o texto para colar (só com nota 7 ou mais), <code>--en</code> em inglês, <code>--json</code> para outro programa. Sai com 0 se a nota for 7 ou mais.</p></div>
-    <div class="card"><h3>🧭 escolher.py</h3><p>Subagente, /boost, /swarm ou /teamwork, pela tabela oficial. Por flags (<code>--divide-limpo sim</code>, <code>--dificil</code>, <code>--dias</code>, <code>--lateral</code>) ou por perguntas no terminal.</p></div>
+    <div class="card"><h3>🧭 escolher.py</h3><p>Subagente, /boost, /swarm ou /teamwork, pela tabela oficial; se nenhum servir, responde "o agente padrão, numa conversa normal". Por flags (<code>--divide-limpo sim</code>, <code>--dificil</code>, <code>--dias</code>, <code>--lateral</code>) ou por perguntas no terminal.</p></div>
   </div>
 </div></section>
 
@@ -348,7 +348,7 @@ Próximo passo: Antes de digitar, escreva a Ficha do Enxame: cp modelos/FICHA.md
 
   <div class="step"><div class="b">2</div><div>
     <h3>Copie o modelo e preencha</h3>
-    <p>Arquivos e pastas sempre entre crases. Para investigação, o dono pode ser uma pergunta: <code>- dono: pergunta: quais módulos custam mais tempo?</code> O modelo vazio tira 2/8 no conferidor: é normal, ele só passa depois de preenchido.</p>
+    <p>Arquivos e pastas sempre entre crases. Para investigação, o dono pode ser uma pergunta: <code>- dono: pergunta: quais módulos custam mais tempo?</code> O modelo vazio tira 1/8 no conferidor: é normal, ele só passa depois de preenchido.</p>
 <pre><span class="k">cp</span> modelos/FICHA.md minha-ficha.md</pre>
   </div></div>
 
@@ -390,9 +390,9 @@ Nota: 8/8 — pronta para o /swarm</span></pre>
 
   <div class="step"><div class="b">6</div><div>
     <h3>Rode os testes do kit (opcional)</h3>
-    <p>35 testes com <code>unittest</code>: os 4 exemplos tiram 8, o ruim sai com código 1 (inclusive no <code>--prompt</code>), os <code>prompt.txt</code> batem com o que o script gera.</p>
+    <p>36 testes com <code>unittest</code>: os 4 exemplos tiram 8, o ruim sai com código 1 (inclusive no <code>--prompt</code>), os <code>prompt.txt</code> batem com o que o script gera.</p>
 <pre><span class="k">python3 -m unittest -v</span>
-<span class="c">Ran 35 tests …
+<span class="c">Ran 36 tests …
 OK</span></pre>
   </div></div>
 </div></section>
@@ -414,7 +414,7 @@ OK</span></pre>
   <span class="chip">Roadmap</span>
   <h2>O que vem</h2>
   <p class="sub">O kit segue a documentação; quando ela mudar, ele muda.</p>
-  <div class="phase"><div class="tag">Agora</div><div class="d"><strong>Kit v1</strong><span>Modelo da ficha, checar.py com 8 itens e prompt PT/EN, escolher.py, 4 exemplos e o exemplo ruim, 35 testes.</span></div></div>
+  <div class="phase"><div class="tag">Agora</div><div class="d"><strong>Kit v1</strong><span>Modelo da ficha, checar.py com 8 itens e prompt PT/EN, escolher.py, 4 exemplos e o exemplo ruim, 36 testes.</span></div></div>
   <div class="phase"><div class="tag">Em breve</div><div class="d"><strong>Três vídeos</strong><span>Básico, técnico e da ficha, nesta página e nos três idiomas.</span></div></div>
   <div class="phase"><div class="tag">Depois</div><div class="d"><strong>Teste de verdade</strong><span>Quando houver acesso ao /swarm, rodar as 4 fichas e publicar o que aconteceu, inclusive o gasto de cota.</span></div></div>
 </div></section>

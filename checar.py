@@ -92,7 +92,11 @@ def ler_ficha(texto):
         elif secao == "limites":
             m = re.match(r"^\s*[-*]\s*(.+)$", linha)
             if m:
-                ficha["limites"].append(m.group(1).strip())
+                txt = m.group(1).strip()
+                kv = re.match(r"^([^:]{1,40}):\s*(.*)$", txt)
+                # linha de modelo ("cota: <quanto aceita gastar>") não conta como limite
+                if preenchido(kv.group(2) if kv else txt):
+                    ficha["limites"].append(txt)
     ficha["tarefa"] = ficha["tarefa"].strip()
     ficha["verificar"] = ficha["verificar"].strip()
     ficha["modelo_workers"] = ficha["modelo_workers"].strip()

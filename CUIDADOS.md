@@ -5,7 +5,7 @@ Este kit **não testou o /swarm**: o Antigravity não está instalado na máquin
 
 ## O que a documentação oficial diz
 
-1. **Cota.** Cada worker é um agente próprio, então um enxame gasta cota muito mais rápido que uma conversa. Pela nossa conta, três workers, um verificador e o monitor já são cinco agentes, não um.
+1. **Cota.** Cada worker é um agente próprio, então um enxame gasta cota muito mais rápido que uma conversa. Pela nossa conta, três workers, um verificador e o monitor já são cinco agentes além do coordenador, não um.
 2. **Prévia, só Pro e Ultra.** O `/swarm` está em prévia (preview) e só aparece nos planos Google AI Pro e Google AI Ultra, no app e na CLI. Pode mudar.
 3. **Worker sem cota pausa e não volta sozinho.** Você vê o erro de cota uma vez; o membro fica parado até ter um post novo no quadro, alguém trocar o modelo dele ou você mandar mensagem. Ele não reinicia quando a cota renova.
 4. **Remover é permanente.** Um worker removido (Killed) não volta; o coordenador cria outro. Remover também apaga a cópia de trabalho dele, por isso ele precisa entregar as mudanças antes.
@@ -16,7 +16,7 @@ Este kit **não testou o /swarm**: o Antigravity não está instalado na máquin
 
 Um usuário relatou que a conta do Gemini/Antigravity foi **bloqueada em minutos** quando outro agente disparou dezenas de sessões sem supervisão, em segundos. Segundo o mesmo relato, a conta voltou depois de um recurso automático, em poucas horas.
 
-A resposta citada no fórum do Google: uso automatizado é permitido e desconta da cota, mas **laços de fundo sem supervisão, em alto volume**, podem acionar a proteção antiabuso.
+Segundo o mesmo relato, uma resposta no fórum do Google disse que o uso automatizado é permitido e desconta da cota, mas **laços de fundo sem supervisão, em alto volume**, podem acionar a proteção antiabuso.
 
 Não reproduzimos esse caso. Ele está aqui como alerta, não como medição.
 

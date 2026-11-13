@@ -139,6 +139,13 @@ class TestItens(unittest.TestCase):
         t = BOA.split("## Limites")[0]
         self.assertFalse(item(checar.checar(t), 8)["ok"])
 
+    def test_limites_do_modelo_nao_contam(self):
+        lim_modelo = "## Limites" + ler("modelos/FICHA.md").split("## Limites")[1].split("## Modelo dos workers")[0]
+        t = ler("exemplos/calculadora-roi/ficha.md").split("## Limites")[0] + lim_modelo
+        res = checar.checar(t)
+        self.assertFalse(item(res, 8)["ok"])
+        self.assertNotIn("<quanto", checar.montar_prompt(res))
+
     def test_laco_sem_supervisao_reprova(self):
         res = checar.checar(BOA + "- rodar o /swarm em laço a noite toda sem supervisão\n")
         self.assertFalse(item(res, 8)["ok"])
