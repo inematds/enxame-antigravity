@@ -88,3 +88,16 @@ Sem texto para o /swarm: a ficha tirou 2/8 e precisa de 7 ou mais.
 ✘ 8. Limites de cota e de parada, sem laço sem supervisão — falta limite de cota; falta quando parar; pede laço sem supervisão: - deixar o /swarm rodando a noite toda sem supervisão até ficar perfeito
    → como corrigir: Em '## Limites', escreva quanto de cota aceita gastar e quando parar. Tire qualquer pedido de rodar em laço, à noite ou sem você olhando: laço de fundo sem supervisão em alto volume pode acionar o antiabuso.
 (código de saída: 1)
+
+## ruim.md → ruim-corrigida.md (mesmo pedido, 13/11/2026)
+$ python3 checar.py exemplos/ruim-corrigida.md
+Ficha do Enxame: exemplos/ruim-corrigida.md
+✔ 1. Tarefa escrita — tarefa: Melhorar a página inicial do site: visual mais limpo, textos mais claros e o formulário de…
+✔ 2. Como verificar tem um comando — comando: npm test
+✔ 3. Pelo menos 2 peças — 3 peça(s): @visual, @textos, @formulario
+✔ 4. Toda peça tem dono — todas têm dono
+✔ 5. Donos não se sobrepõem — nenhum arquivo com dois donos
+✔ 6. Toda peça diz o que não mexe e quando está pronta — todas completas
+✔ 7. Verificador definido — 1 verificador(es) para 3 peça(s); roda: npm test
+✔ 8. Limites de cota e de parada, sem laço sem supervisão — cota e parada definidas; nenhum laço sem supervisão
+Nota: 8/8 — pronta para o /swarm
